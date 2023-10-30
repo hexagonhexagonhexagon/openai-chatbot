@@ -2,7 +2,7 @@
 
 include 'vendor/autoload.php';
 
-$yourApiKey = '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';
+$yourAPIKey = $_ENV['openai_php_chatbot_key'];
 $client = OpenAI::client($yourApiKey);
 
 // $result = $client->completions()->create([
