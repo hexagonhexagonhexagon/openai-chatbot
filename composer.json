@@ -1,0 +1,23 @@
+{
+    "name": "fletcherbangs/test",
+    "autoload": {
+        "psr-4": {
+            "Fletcherbangs\\Test\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Fletcher"
+        }
+    ],
+    "require": {
+        "symfony/http-client": "^6.3",
+        "openai-php/client": "^0.7.4",
+        "nyholm/psr7": "^1.8"
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
+    }
+}
