@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'fletcherbangs/test',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => NULL,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => 'c66fa102f76042c41eb267e428323bab67d59208',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,11 +11,20 @@
     ),
     'versions' => array(
         'fletcherbangs/test' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => NULL,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => 'c66fa102f76042c41eb267e428323bab67d59208',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'graham-campbell/result-type' => array(
+            'pretty_version' => 'v1.1.1',
+            'version' => '1.1.1.0',
+            'reference' => '672eff8cf1d6fe1ef09ca0f89c4b287d6a3eb831',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../graham-campbell/result-type',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
@@ -73,6 +82,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'phpoption/phpoption' => array(
+            'pretty_version' => '1.9.1',
+            'version' => '1.9.1.0',
+            'reference' => 'dd3a383e599f49777d8b628dadbb90cae435b87e',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../phpoption/phpoption',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'psr/container' => array(
             'pretty_version' => '2.0.2',
             'version' => '2.0.2.0',
@@ -110,8 +128,8 @@
         'psr/http-factory-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '*',
-                1 => '1.0',
+                0 => '1.0',
+                1 => '*',
             ),
         ),
         'psr/http-message' => array(
@@ -126,8 +144,8 @@
         'psr/http-message-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '*',
-                1 => '1.0',
+                0 => '1.0',
+                1 => '*',
             ),
         ),
         'psr/log' => array(
@@ -172,12 +190,48 @@
                 0 => '3.0',
             ),
         ),
+        'symfony/polyfill-ctype' => array(
+            'pretty_version' => 'v1.28.0',
+            'version' => '1.28.0.0',
+            'reference' => 'ea208ce43cbb04af6867b4fdddb1bdbf84cc28cb',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/polyfill-ctype',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'symfony/polyfill-mbstring' => array(
+            'pretty_version' => 'v1.28.0',
+            'version' => '1.28.0.0',
+            'reference' => '42292d99c55abe617799667f454222c54c60e229',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/polyfill-mbstring',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'symfony/polyfill-php80' => array(
+            'pretty_version' => 'v1.28.0',
+            'version' => '1.28.0.0',
+            'reference' => '6caa57379c4aec19c0a12a38b59b26487dcfe4b5',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/polyfill-php80',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'symfony/service-contracts' => array(
             'pretty_version' => 'v3.3.0',
             'version' => '3.3.0.0',
             'reference' => '40da9cc13ec349d9e4966ce18b5fbcd724ab10a4',
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/service-contracts',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'vlucas/phpdotenv' => array(
+            'pretty_version' => 'v5.5.0',
+            'version' => '5.5.0.0',
+            'reference' => '1a7ea2afc49c3ee6d87061f5a233e3a035d0eae7',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../vlucas/phpdotenv',
             'aliases' => array(),
             'dev_requirement' => false,
         ),

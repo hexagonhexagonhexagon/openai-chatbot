@@ -13,7 +13,8 @@
     "require": {
         "symfony/http-client": "^6.3",
         "openai-php/client": "^0.7.4",
-        "nyholm/psr7": "^1.8"
+        "nyholm/psr7": "^1.8",
+        "vlucas/phpdotenv": "^5.5"
     },
     "config": {
         "allow-plugins": {

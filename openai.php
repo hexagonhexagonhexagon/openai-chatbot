@@ -2,7 +2,13 @@
 
 include 'vendor/autoload.php';
 
-$yourAPIKey = $_ENV['openai_php_chatbot_key'];
+use Dotenv\Dotenv;
+
+$dotenv = Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+print_r($_ENV);
+
+$yourAPIKey = $_ENV['OPENAI_PHP_CHATBOT_API_KEY'];
 $client = OpenAI::client($yourApiKey);
 
 // $result = $client->completions()->create([
