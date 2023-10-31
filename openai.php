@@ -6,10 +6,10 @@ use Dotenv\Dotenv;
 
 $dotenv = Dotenv::createImmutable(__DIR__);
 $dotenv->load();
-print_r($_ENV);
+//print_r($_ENV);
 
 $yourAPIKey = $_ENV['OPENAI_PHP_CHATBOT_API_KEY'];
-$client = OpenAI::client($yourApiKey);
+$client = OpenAI::client($yourAPIKey);
 
 // $result = $client->completions()->create([
 //     'model' => 'gpt-3.5-turbo-instruct',
