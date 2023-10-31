@@ -6,29 +6,22 @@ use Dotenv\Dotenv;
 
 $dotenv = Dotenv::createImmutable(__DIR__);
 $dotenv->load();
-//print_r($_ENV);
 
 $yourAPIKey = $_ENV['OPENAI_PHP_CHATBOT_API_KEY'];
 $client = OpenAI::client($yourAPIKey);
 
-// $result = $client->completions()->create([
-//     'model' => 'gpt-3.5-turbo-instruct',
-//     'prompt' => 'PHP is',
-// ]);
+$chatBotName = readline("Hello, friend. I'm your personal helpful chatbot. What would you like to call me? ");
+$userName = readline("Okay, from now on you can call me $chatBotName. What is your name? ");
+echo "Hello, $userName. It's nice to meet you. ";
+$initialUserMessage = readline("Tell me, $userName, how are you feeling today? You can tell me anything you want.");
 
-// echo $result['choices'][0]['text']; // an open-source, widely-used, server-side scripting language.
-
-$chatBotName = 'Friend';
-
-$chatBotSystemMessage = "You are a friendly chatbot named $chatBotName whose main objective is to help the user have encouraging but helpful conversations about \
-themselves, their life, and any challenges that might be in their life at the moment. \
-Consider yourself to be a friend of the user, and you want to help them feel better about themselves.";
+$chatBotSystemMessage = "You are a friendly chatbot named $chatBotName whose main objective is to help the user have encouraging but helpful conversations about themselves, their life, and any challengesthat might be in their life at the moment. Consider yourself to be a friend of the user, and you want to help them feel better about themselves.";
 
 $response = $client->chat()->create([
     'model' => 'gpt-3.5-turbo',
     'messages' => [
         ['role' => 'system', 'content' => $chatBotSystemMessage],
-        ['role' => 'user', 'content' => 'Hi, my name is John. I am feeling sad today.']
+        ['role' => 'user', 'content' => $initialUserMessage]
     ],
 ]);
 
@@ -50,3 +43,4 @@ $response->usage->totalTokens; // 21
 
 $response->toArray(); // ['id' => 'chatcmpl-6pMyfj1HF4QXnfvjtfzvufZSQq6Eq', ...]
 echo $response->choices[0]->message->content;
+
