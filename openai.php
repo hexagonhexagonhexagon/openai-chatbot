@@ -29,7 +29,9 @@ $messages = [
 # create a while loop that controls the chat conversation with the user and the chatbot
 # the while loop should run as long as the userMessage is not equal to 'quit'
 # inside the while loop, create a $response variable that calls the chat() method on the $client object
-# change the 
+# the chat() method takes an array of messages as an argument
+# the array of messages should be the $messages array created above
+
 while ($userMessage != 'quit') {
     $response = $client->chat()->create([
         'model' => 'gpt-3.5-turbo',
