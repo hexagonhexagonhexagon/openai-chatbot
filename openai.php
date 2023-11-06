@@ -10,18 +10,22 @@ $dotenv->load();
 $yourAPIKey = $_ENV['OPENAI_PHP_CHATBOT_API_KEY'];
 $client = OpenAI::client($yourAPIKey);
 
+$chatBotSystemMessage = "You are a friendly chatbot who is here to help people with their problems.
+Be kind, thoughtful, and ask simple questions for the purpose of helping the user identify why they
+are not feeling well, and then kindly propose ideas and solutions to make them feel better,
+or to fix their problems.";
 
+$initialAssistantMessage = "Hello. I am here to help. How are you feeling today? You can tell me anything you want.";
+$userMessage = "";
+
+$messages = [
+    ['role' => 'system', 'content' => $chatBotSystemMessage]
+];
 
 while (true) {
-    $chatBotSystemMessage = "You are a friendly chatbot who is here to help people with their problems. Be kind, thoughtful, and ask simple questions for the purpose of helping the user identify why they are not feeling well, and then kindly propose ideas and solutions to make them feel better, or to fix their problems.";
-    $initialAssistantMessage = "Tell me, how are you feeling today? You can tell me anything you want.";
-    $userMessage = readline($initialAssistantMessage);
     $response = $client->chat()->create([
         'model' => 'gpt-3.5-turbo',
-        'messages' => [
-            ['role' => 'system', 'content' => $chatBotSystemMessage],
-            ['role' => 'user', 'content' => $userMessage]
-        ]
+        'messages' => $messages
         ]);
 
     $response->id; // 'chatcmpl-6pMyfj1HF4QXnfvjtfzvufZSQq6Eq'
@@ -44,5 +48,9 @@ while (true) {
     
     $chatBotResponse = $response->choices[0]->message->content;
     $userMessage = readline($chatBotResponse);
+
+    array_push($messages, ['role' => 'assistant', 'content' => $chatBotResponse]);
+    array_push($messages, ['role' => 'user', 'content' => $userMessage]);
+    echo json_encode($messages, JSON_PRETTY_PRINT);
 };
 
